@@ -40,9 +40,9 @@ const staffAvailabilityController = {
             const {
                 availabiltyid,
                 dayofweek,
-                startTime,
-                endTime,
-                availabilityStatus
+                starttime,
+                endtime,
+                availabilitystatus
             } = req.body;
 
             const { data, error } = await supabase
@@ -50,9 +50,9 @@ const staffAvailabilityController = {
                 .insert([{
                     availabiltyid,
                     dayofweek,
-                    startTime,
-                    endTime,
-                    availabilityStatus
+                    starttime,
+                    endtime,
+                    availabilitystatus
                 }])
                 .select();
 
