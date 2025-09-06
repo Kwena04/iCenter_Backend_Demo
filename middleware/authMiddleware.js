@@ -1,3 +1,11 @@
+//temporary authentication for testing
+const requireAuth = (req, res, next) => {
+
+    req.user = { role: 'staff' };
+    return next();
+};
+
+
 const requireAnyRole = (allowedRoles) => {
     return (req, res, next) => {
         if (!req.user || !req.user.role) {
@@ -12,4 +20,4 @@ const requireAnyRole = (allowedRoles) => {
     };
 };
 
-module.exports = { requireAnyRole };
+module.exports = { requireAuth, requireAnyRole };
