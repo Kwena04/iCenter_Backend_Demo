@@ -39,6 +39,7 @@ const staffAvailabilityController = {
         try {
             const {
                 availabilityid,
+                userid,
                 dayofweek,
                 starttime,
                 endtime,
@@ -49,6 +50,7 @@ const staffAvailabilityController = {
                 .from('staffavailability')
                 .insert([{
                     availabilityid,
+                    userid,
                     dayofweek,
                     starttime,
                     endtime,
