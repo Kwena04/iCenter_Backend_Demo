@@ -38,7 +38,7 @@ const staffAvailabilityController = {
     createStaffAvailability: async (req, res) => {
         try {
             const {
-                availabiltyid,
+                availabilityid,
                 dayofweek,
                 starttime,
                 endtime,
@@ -48,7 +48,7 @@ const staffAvailabilityController = {
             const { data, error } = await supabase
                 .from('staffavailability')
                 .insert([{
-                    availabiltyid,
+                    availabilityid,
                     dayofweek,
                     starttime,
                     endtime,
