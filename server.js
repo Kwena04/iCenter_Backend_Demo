@@ -58,7 +58,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+const staffAvailabilityRoutes = require('./routes/staffAvailabilityRoute');
 
 
 // Middleware
@@ -74,6 +74,16 @@ app.get('/health', (req, res) => {
 });
 
 
+// Mount routes
+app.use('/api/staff-availability', staffAvailabilityRoutes);
+
+//default root route
+app.get('/', (req, res) => {
+    res.json({ message: 'Welcome to the Staff Availability API 🚀' });
+})
+
+
+//404 handler
 app.use((req, res) => {
     res.status(404).json({ error: 'Route not found' });
     // res.next();
@@ -91,5 +101,6 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 
 });
+
 
 
